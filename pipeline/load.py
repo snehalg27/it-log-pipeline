@@ -9,7 +9,7 @@ def load_to_postgres(df):
         # PostgreSQL connection details
         user = "postgres"
         password = "Gsneha%40123"   # 👈 Encoded @ as %40
-        host = "localhost"
+        host = "it-logs-db.c3asc2aaqshq.eu-north-1.rds.amazonaws.com"
         port = "5432"
         database = "it_logs"
 

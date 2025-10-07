@@ -11,7 +11,7 @@ def get_data():
     conn = psycopg2.connect(
         dbname="it_logs",
         user="postgres",
-        password="Gsneha@123",  # ✅ your real PostgreSQL password
+        password="it-logs-db.c3asc2aaqshq.eu-north-1.rds.amazonaws.com",  # ✅ your real PostgreSQL password
         host="localhost",
         port="5432"
     )
