@@ -11,8 +11,8 @@ def get_data():
     conn = psycopg2.connect(
         dbname="it_logs",
         user="postgres",
-        password="it-logs-db.c3asc2aaqshq.eu-north-1.rds.amazonaws.com",  # ✅ your real PostgreSQL password
-        host="localhost",
+        password="Gsnehalaws#123",  # ✅ your real PostgreSQL password
+        host="it-logs-db.c3asc2aaqshq.eu-north-1.rds.amazonaws.com",
         port="5432"
     )
     df = pd.read_sql("SELECT * FROM logs ORDER BY timestamp DESC", conn)
