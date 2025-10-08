@@ -109,6 +109,6 @@ st.line_chart(time_chart.set_index('timestamp')['count'])
 # FOOTER
 # -----------------------------
 st.markdown("---")
-st.caption("👩‍💻 Developed by Snehal | Powered by Streamlit, PostgreSQL & Python 🚀")
+st.caption("👩‍💻 Developed by Snehal Gadekar | Powered by Streamlit, PostgreSQL,Github Actions & Python 🚀")
 
 
