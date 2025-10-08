@@ -1,0 +1,27 @@
+name: Deploy Streamlit App to EC2
+
+on:
+  push:
+    branches:
+      - main  # Trigger when code is pushed to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/it-log-pipeline
+            git pull origin main
+            source venv/bin/activate
+            tmux kill-session -t streamlit || true
+            tmux new -d -s streamlit 'streamlit run dashboard/app.py --server.port 8501 --server.address 0.0.0.0'
